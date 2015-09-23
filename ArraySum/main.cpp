@@ -20,7 +20,8 @@ int main(int argc, const char * argv[]) {
     ArrayWrapper* arg = new ArrayWrapper;
     for(int i = 0; i < 4; i++){
         arg->array = &hugeArray[i*RS_ARRAY_SIZE/4];
-        arg->size = i*RS_ARRAY_SIZE/4;
+        arg->size = RS_ARRAY_SIZE/4;
+//        ArrayHandler::printArray(arg->array, arg->size);
         pthread_create(&threads[i], NULL, &ArrayHandler::sumArray, arg);
     }
     long long sum = 0;
@@ -31,6 +32,5 @@ int main(int argc, const char * argv[]) {
         cout << sum <<"\n";
     }
     cout << "The sum is " << sum << "\n";
-//    pthread_create(&thread, NULL, &ArrayHandler::sumArray, arg);
     return 0;
 }

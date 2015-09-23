@@ -21,12 +21,13 @@ int* ArrayHandler::generateRandomArray(int size){
 int* ArrayHandler::generateArray(int size){
     int* result = new int[size];
     for (int i = 0; i < size; i++) {
-        result[i] = 1;
+        result[i] = i;
     }
     return result;
 }
 
 void ArrayHandler::printArray(int* array, int size){
+    std::cout<< "Array size is " << size << "\n";
     for (int i = 0; i < size; i++) {
         std::cout << array[i] << " ";
     }
