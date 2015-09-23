@@ -33,12 +33,17 @@ void ArrayHandler::printArray(int* array, int size){
     std::cout << "\n";
 }
 
-long long ArrayHandler::sumArray(int* array, void* size){
-    int sizeVal = *(int*) size;
-    long long result = 0;
-    for (int i = 0; i < sizeVal; i++) {
-        result += array[i];
+void* ArrayHandler::sumArray(void* args){
+    ArrayWrapper wrapper = *(ArrayWrapper*) args;
+    int* array = wrapper.array;
+    int size = wrapper.size;
+    long long sum = 0;
+    for (int i = 0; i < size; i++) {
+        sum += array[i];
+        printf("In thread: %lld\n", sum);
     }
+    long long* result = new long long;
+    *result = sum;
     return result;
 }
 

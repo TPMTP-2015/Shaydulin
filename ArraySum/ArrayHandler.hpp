@@ -11,13 +11,18 @@
 
 #include <stdio.h>
 
+struct ArrayWrapper {
+    int* array;
+    int size;
+};
+
 class ArrayHandler {
     
 public:
     static int* generateRandomArray(int size);
     static int* generateArray(int size);
     static void printArray(int* array, int size);
-    static long long sumArray(int* array, void* size);
+    static void* sumArray(void* args);
 };
 
 #endif /* ArrayHandler_hpp */
