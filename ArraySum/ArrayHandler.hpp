@@ -17,7 +17,7 @@ public:
     static int* generateRandomArray(int size);
     static int* generateArray(int size);
     static void printArray(int* array, int size);
-    static long long sumArray(int* array, int size);
+    static long long sumArray(int* array, void* size);
 };
 
 #endif /* ArrayHandler_hpp */
