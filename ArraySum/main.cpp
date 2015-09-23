@@ -7,9 +7,12 @@
 //
 
 #include <iostream>
+#include "ArrayHandler.hpp"
+using std::cout;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::cout << "Hello, World!\n";
+    int* hugeArray = ArrayHandler::generateArray(100000);
+    cout << ArrayHandler::sumArray(hugeArray, 50000) + ArrayHandler::sumArray(&hugeArray[50000], 50000);
     return 0;
 }
