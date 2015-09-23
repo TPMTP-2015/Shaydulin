@@ -13,15 +13,15 @@
 
 struct ArrayWrapper {
     int* array;
-    int size;
+    long size;
 };
 
 class ArrayHandler {
     
 public:
-    static int* generateRandomArray(int size);
-    static int* generateArray(int size);
-    static void printArray(int* array, int size);
+    static int* generateRandomArray(long size);
+    static int* generateArray(long size);
+    static void printArray(int* array, long size);
     static void* sumArray(void* args);
 };
 
