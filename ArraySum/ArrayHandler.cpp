@@ -41,7 +41,6 @@ void* ArrayHandler::sumArray(void* args){
     long long sum = 0;
     for (int i = 0; i < size; i++) {
         sum += array[i];
-        printf("In thread: %lld\n", sum);
     }
     long long* result = new long long;
     *result = sum;
