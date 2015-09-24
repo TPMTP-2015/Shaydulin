@@ -10,6 +10,7 @@
 		444F68981BB2AF5D005794B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444F68971BB2AF5D005794B4 /* main.cpp */; };
 		444F68A01BB2B0B6005794B4 /* ArrayHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444F689E1BB2B0B6005794B4 /* ArrayHandler.cpp */; settings = {ASSET_TAGS = (); }; };
 		444F68A31BB301A8005794B4 /* TestsRunner.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 444F68A11BB301A8005794B4 /* TestsRunner.cpp */; settings = {ASSET_TAGS = (); }; };
+		444F68A51BB418AD005794B4 /* libiomp5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 444F68A41BB418AD005794B4 /* libiomp5.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		444F689F1BB2B0B6005794B4 /* ArrayHandler.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = ArrayHandler.hpp; sourceTree = "<group>"; };
 		444F68A11BB301A8005794B4 /* TestsRunner.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestsRunner.cpp; sourceTree = "<group>"; };
 		444F68A21BB301A8005794B4 /* TestsRunner.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = TestsRunner.hpp; sourceTree = "<group>"; };
+		444F68A41BB418AD005794B4 /* libiomp5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libiomp5.dylib; path = ../../../usr/local/Cellar/libiomp/20150701/lib/libiomp5.dylib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,6 +40,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				444F68A51BB418AD005794B4 /* libiomp5.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -47,6 +50,7 @@
 		444F688B1BB2AF5D005794B4 = {
 			isa = PBXGroup;
 			children = (
+				444F68A41BB418AD005794B4 /* libiomp5.dylib */,
 				444F68961BB2AF5D005794B4 /* ArraySum */,
 				444F68951BB2AF5D005794B4 /* Products */,
 			);
@@ -217,6 +221,14 @@
 		444F689C1BB2AF5D005794B4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/libiomp/20150701/lib,
+				);
+				OMP = "/usr/local/bin/clang-omp";
+				OTHER_CFLAGS = "-fopenmp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -224,6 +236,14 @@
 		444F689D1BB2AF5D005794B4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = NO;
+				HEADER_SEARCH_PATHS = /usr/local/include;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/usr/local/Cellar/libiomp/20150701/lib,
+				);
+				OMP = "/usr/local/bin/clang-omp";
+				OTHER_CFLAGS = "-fopenmp";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
